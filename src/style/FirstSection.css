@@ -1,0 +1,204 @@
+.cluster-container {
+  position: relative;
+  width: 80%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+
+.center-text {
+  position: absolute;
+  z-index: 10;
+  text-align: center;
+  color: black;
+  pointer-events: none;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 400;
+  color: #414141;
+  font-style: regular;
+  line-height: 100%;
+  margin: 0;
+}
+
+.main-title {
+  padding: 15px 0;
+  font-size: 32px;
+  font-weight: 700;
+  font-style: Nohemi;
+  margin: 0;
+  line-height: 120%;
+}
+
+.view-button {
+  padding: 8px 16px;
+  background: white;
+  color: black;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+/* GIFs */
+.gif {
+  position: absolute;
+  transition: all 0.6s ease;
+  z-index: 5;
+}
+
+.gif img {
+  width: 96px;
+  height: 96px;
+  border-radius: 32px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.gif-1 { top: 25%; left: 40%; }
+.gif-2 { top: 55%; left: 63%; }
+.gif-3 { top: 60%; left: 40%; }
+.gif-4 { top: 55%; left: 17%; }
+
+.gif.expand.gif-1 { top: 15%; left: 40%; }
+.gif.expand.gif-2 { top: 51%; left: 67%; }
+.gif.expand.gif-3 { top: 75%; left: 40%; }
+.gif.expand.gif-4 { top: 48%; left: 14%; }
+
+
+.fade-in-text {
+  font-size: 12px;
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #ffffff;
+  color: black;
+  border-radius: 0.25rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  animation: fadeInSmooth 0.9s ease-in forwards;
+}
+
+.fade-in-video {
+  position: absolute;
+  top: 40%;
+  left: 60%;
+  transform: translateX(-50%);
+  background: #ffffff;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  animation: fadeInSmooth 1.5s ease-in-out forwards;
+  z-index: 10;
+  width: 8rem;
+  height: 12rem;
+}
+
+.fade-in-video video {
+  width: 8rem;
+  height: 8rem;
+}
+
+/* Testimonial Card Styles */
+.testimonial-card {
+  position: absolute;
+  top: 15%;
+  left: 20%;
+  transform: translateX(-50%);
+  background: rgba(255, 255, 255, 0.9);
+  padding: 5px 10px;
+  border-radius: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 300px;
+  text-align: justify;
+  animation: fadeInSmooth 0.9s ease-in forwards;
+  z-index: 10;
+}
+
+.testimonial-text {
+  font-size: 12px;
+  color: #333;
+  line-height: 1.5;
+  margin-bottom: 0.5rem;
+}
+
+.testimonial-author {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+}
+
+.author-name {
+  font-size: 0.7rem;
+  font-weight: bold;
+  color: black;
+}
+
+.author-title {
+  font-size: 0.6rem;
+  color: #666;
+}
+
+@keyframes fadeInSmooth {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+/* Photos */
+.photo {
+  position: absolute;
+  width: 97px;
+  height: 97px;
+  border-radius: 32px;
+  object-fit: cover;
+  transition: transform 0.6s ease, top 0.6s ease, left 0.6s ease;
+  cursor: pointer;
+}
+
+.photo-1:hover,
+.photo-4:hover {
+  box-shadow: 5px 5px 10px #97D3C0, -5px -5px 10px #97D3C0;
+}
+
+/* Initial center positions */
+.photo-1 { top: 25%; left: 28%; }
+.photo-2 { top: 25%; left: 52%; }
+.photo-3 { top: 39%; left: 65%; }
+.photo-4 { top: 60%; left: 52%; }
+.photo-5 { top: 60%; left: 28%; }
+.photo-6 { top: 41%; left: 20%; }
+
+/* Expanded positions */
+.photo.expand.photo-1 { top: 10%; left: 15%; animation: moveUpDown 2.7s ease-in-out infinite; }
+.photo.expand.photo-2 { top: 10%; left: 70%; animation: moveDownUp 2.7s ease-in-out infinite; }
+.photo.expand.photo-3 { top: 40%; left: 85%; animation: moveUpDown 2.7s ease-in-out infinite; }
+.photo.expand.photo-4 { top: 70%; left: 55%; animation: moveDownUp 2.7s ease-in-out infinite; }
+.photo.expand.photo-5 { top: 70%; left: 25%; animation: moveUpDown 2.7s ease-in-out infinite; }
+.photo.expand.photo-6 { top: 30%; left: 2%; animation: moveDownUp 2.7s ease-in-out infinite; }
+
+
+@keyframes moveUpDown {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+  100% { transform: translateY(0); }
+}
+
+@keyframes moveDownUp {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(20px); }
+  100% { transform: translateY(0); }
+}
+
