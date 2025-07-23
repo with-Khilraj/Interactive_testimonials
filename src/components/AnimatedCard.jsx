@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import '../style/AnimatedCard.css';
 
-const AnimatedCard = ({ primary, secondaryCards = [] }) => {
+const AnimatedCard = ({ primary, secondaryCards = [], imagePosition = 'left' }) => {
   const [hovered, setHovered] = useState(false);
   const [index, setIndex] = useState(0);
 
@@ -21,22 +21,20 @@ const AnimatedCard = ({ primary, secondaryCards = [] }) => {
       }}
     >
       {/* Primary Card */}
-      <div className="card primary-card">
-        <div className="left">
-          <img src={primary.image} alt="primary" />
-        </div>
+      <div className={`card primary-card ${imagePosition === 'right' ? 'image-right' : 'image-left'}`}>
+        {imagePosition === 'left' && <img src={primary.image} alt='primary' className='left card-img' />}
 
-        <div className="right">
+        <div className="card-text">
           <h2>{primary.title}</h2>
           <p className="subtitle">{primary.subtitle}</p>
           <p className="description">{primary.description}</p>
         </div>
-
+        {imagePosition === 'right' && <img src={primary.image} alt='primary' className='right card-img' />}
       </div>
 
       {/* Secondary Card */}
       {currentSecondary && (
-        <div className="card secondary-card">
+        <div className={`card secondary-card ${imagePosition === 'right' ? 'image-right' : 'image-left'}`}>
           <img src={currentSecondary.image} alt="secondary" />
           <h2>{currentSecondary.title}</h2>
           <p className="subtitle">{currentSecondary.subtitle}</p>

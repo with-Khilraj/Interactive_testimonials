@@ -4,11 +4,33 @@
   margin: auto;
 }
 
+.journey-container .main-title {
+  font-size: 24px;
+  font-weight: 500;
+  /* margin: 0; */
+}
+
+.journey-container h1 {
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.journey-container .main-title,
+.journey-container h1 {
+  margin-left: 31px;
+}
+
+.journey-container .highlight {
+  color: #1DA077;
+}
+
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(385px, 1fr));
-  gap: 24px;
+  gap: 30px;
   margin-top: 30px;
+  margin: auto;
+  width: 95%;
 }
 
 .card-wrapper, .static-card {
@@ -16,21 +38,99 @@
   /* width: 540px; */
 }
 
-.highlight {
-  color: #10b981;
-  font-weight: 700;
+.static-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  border-radius: 30px;
+  color: white;
+  gap: 20px;
+  box-sizing: border-box;
 }
 
-.static-card {
-  padding: 20px;
-  border-radius: 16px;
+.static-card.image-left .card-img {
+  position: relative;
+  width: 305px;
+  height: 250px;
+  right: 10%;
+  top: 23%;
+  animation: moveUpDown 2.5s ease-in-out infinite;
+}
+
+.static-card.image-right .card-img {
+  left: 11%;
+  position: relative;
+  top: 17%;
+  width: 280px;
+  height: 310px;
+  animation: moveUpDown 2.5s ease-in-out infinite;
+}
+
+.static-card.image-left {
+  flex-direction: row;
+}
+
+.static-card .card-text h2 {
+  font-size: 32px;
+  font-weight: 700;
+  color: #FAFAFA;
+  margin: 0;
+}
+
+.static-card.image-left .card-text h2 {
+  width: 200%;
+  position: relative;
+  right: 100%;
+}
+
+.static-card.image-right .card-text h2 {
+  width: 200%;
+}
+
+.static-card.image-left .card-text .subtitle {
+  right: 31%;
+  position: relative;
+  width: 131%;
+}
+
+.static-card.image-right .card-text .subtitle {
+  width: 160%;
+}
+
+.static-card.image-left .card-text .description {
+  right: 41%;
+  position: relative;
+  width: 141%;
+}
+
+.static-card.image-right .card-text .description {
+  width: 140%;
+} 
+
+.static-card .subtitle  {
   color: white;
+  position: relative;
+  font-size: 24px;
+  font-weight: 500;
+  margin: 6px 0;
+}
+
+.static-card.image-right {
+  flex-direction: row-reverse;
 }
 
 .purple {
-  background-color: #7c3aed;
+  background-color: #6C64A8;
 }
 
 .brown {
-  background-color: #a16207;
+  background-color: #A88964;
+}
+
+
+@keyframes moveUpDown {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0); }
 }
