@@ -1,0 +1,36 @@
+.journey-container {
+  padding: 40px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(385px, 1fr));
+  gap: 24px;
+  margin-top: 30px;
+}
+
+.card-wrapper, .static-card {
+  height: 341px;
+  /* width: 540px; */
+}
+
+.highlight {
+  color: #10b981;
+  font-weight: 700;
+}
+
+.static-card {
+  padding: 20px;
+  border-radius: 16px;
+  color: white;
+}
+
+.purple {
+  background-color: #7c3aed;
+}
+
+.brown {
+  background-color: #a16207;
+}

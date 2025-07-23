@@ -1,9 +1,10 @@
-import TestimoniaFirstSection from "./components/Testimonial";
+import Features from "./components/Features";
 
 function App() {
   return (
     <div className="App">
-      <TestimoniaFirstSection />
+      {/* <TestimoniaFirstSection /> */}
+      <Features />
     </div>
   );
 }
