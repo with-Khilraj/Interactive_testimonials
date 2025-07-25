@@ -44,6 +44,7 @@
 
 .card-wrapper:hover .secondary-card {
   opacity: 1;
+  pointer-events: auto;
 }
 
 .secondary-card {
@@ -117,15 +118,57 @@ img {
   line-height: 1.5;
 }
 
-.secondary-card.image-right .arrow-button {
+
+.arrow-container {
   position: absolute;
-  bottom: 12px;
-  right: 16px;
-  background: transparent;
+  top: 0;
+  bottom: 0;
+  width: 50px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+}
+
+.arrow-container.left {
+  width: 80px;
+  height: 80px;
+  border-radius: 50px;
+  top: 50%;
+  transform: translateY(-50%);
+  left: -25px;
+  z-index: 999;
+}
+
+.arrow-container.right {
+  right: -25px;
+  width: 80px;
+  height: 80px;
+  border-radius: 50px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.arrow-button {
+  width: 40px;
+  height: 40px;
+  background-color: white;
+  border-radius: 50%;
   border: none;
   font-size: 20px;
   cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease;
 }
+
+.arrow-button:hover {
+  transform: scale(1.1);
+}
+
 
 
 @keyframes moveUpDown {

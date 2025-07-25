@@ -8,7 +8,11 @@ const AnimatedCard = ({ primary, secondaryCards = [], imagePosition = 'left' }) 
   const currentSecondary = secondaryCards[index] || null;
 
   const handleNext = () => {
-    setIndex((prev) => (prev + 1) % secondaryCards.length);
+    setIndex((prev) => (prev + 1));
+  };
+
+  const handlePrev = () => {
+    setIndex((prev) => (prev - 1 + secondaryCards.length));
   };
 
   return (
@@ -41,10 +45,37 @@ const AnimatedCard = ({ primary, secondaryCards = [], imagePosition = 'left' }) 
           <p className="description">{currentSecondary.description}</p>
 
           {secondaryCards.length > 1 && (
-            <button className="arrow-button" onClick={handleNext}>
-              ➡️
-            </button>
+            <>
+              <div className="arrow-container left">
+                <button
+                  className="arrow-button"
+                  onClick={() => {
+                    console.log('Decreasing index:', index, '→', index - 1);
+                    if (index > 0) setIndex(index - 1);
+                  }}
+                  disabled={index === 0}
+                >
+                  ←
+                </button>
+              </div>
+
+              <div className="arrow-container right">
+                <button
+                  className="arrow-button"
+                  onClick={() => {
+                    console.log('Increasing index:', index, '→', index + 1);
+                    if (index < secondaryCards.length - 1) setIndex(index + 1);
+                  }}
+                  disabled={index === secondaryCards.length - 1}
+                >
+                  →
+                </button>
+              </div>
+            </>
           )}
+
+
+
         </div>
       )}
     </div>
