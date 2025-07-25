@@ -9,7 +9,8 @@ import showcase from '../assets/showcase.png';
 import clarity2 from '../assets/clarity-2.png';
 import learn2 from '../assets/learn-2.png';
 import learn3 from '../assets/learn-3.png';
-
+import wow1 from '../assets/wow1.png';
+import wow2 from '../assets/wow2.png';
 
 const Features = () => {
   return (
@@ -27,10 +28,11 @@ const Features = () => {
           }}
           secondaryCards={[
             {
-              title: '',
-              subtitle: 'Clarity unlocked - stickers, sips, and skills all in one go!',
-              description: '',
+              title: 'Clarity unlocked—\nstickers, sips, and skills\nall in one go!',
               image: clarity2,
+              image1: wow1,
+              image2: wow2,
+              className: 'clarity-unlocked'
             }
           ]}
           imagePosition='left'
@@ -45,16 +47,14 @@ const Features = () => {
           }}
           secondaryCards={[
             {
-              title: '',
-              subtitle: 'Projects that matter.',
-              description: '',
+              title: 'Fouces faces—learning\nmode: ON!',
               image: learn2,
+              className: 'focus-faces'
             },
             {
-              title: '',
-              subtitle: 'Job-ready results.',
-              description: '',
+              title: 'Laptops, lessons and a whole lot of\ngrowth!',
               image: learn3,
+              className: 'lot-of-growth'
             },
           ]}
           imagePosition='right'

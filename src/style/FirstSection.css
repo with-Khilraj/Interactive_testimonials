@@ -17,6 +17,10 @@
   pointer-events: none;
 }
 
+.center-text span {
+  color: #1DA077;
+}
+
 .title {
   font-size: 24px;
   font-weight: 400;

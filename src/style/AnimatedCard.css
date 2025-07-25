@@ -4,12 +4,8 @@
 }
 
 .card {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   padding: 20px;
   border-radius: 32px;
-  position: absolute;
   width: 100%;
   height: 100%;
   transition: all 1.5s ease;
@@ -17,6 +13,10 @@
 }
 
 .primary-card {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   z-index: 2;
   transform: translateX(0%);
   opacity: 1;
@@ -42,22 +42,66 @@
   opacity: 0;
 }
 
-.card-wrapper:hover .secondary-card {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-.secondary-card {
+.card-wrapper.hovered .primary-card {
   z-index: 1;
-  opacity: 0;
   pointer-events: none;
 }
 
-img {
-  width: 342px;
-  border-bottom-left-radius: 23px;
-  height: 343px;
+.card-wrapper:hover .secondary-card {
+  pointer-events: auto;
+  z-index: 2;
+  opacity: 1;
 }
+
+.secondary-card {
+  opacity: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.clarity-unlocked {
+  position: relative;
+  right: 17%;
+  bottom: 37%;
+  width: 352px;
+  border-bottom-left-radius: 23px;
+  height: 370px;
+  z-index: 1;
+}
+
+.focus-faces {
+  position: relative;
+  width: 540px;
+  height: 300px;
+  bottom: 10%;
+  left: 7%;
+  margin: 0;
+}
+
+.secondary-card.image-left .wow1 {
+  position: relative;
+  top: -108%;
+  left: 5%;
+  width: 88px;
+  height: 88px;
+  z-index: 0;
+}
+
+.secondary-card.image-left .wow2 {
+  position: relative;
+  top: -79%;
+  left: 73%;
+  width: 88px;
+  height: 88px;
+}
+
+.lot-of-growth {
+  width: 570px;
+  position: relative;
+  bottom: 22%;
+  margin: auto;
+}
+
 
 .card-img {
   flex-shrink: 0;
@@ -111,6 +155,28 @@ img {
   margin: 6px 0;
 }
 
+
+.secondary-card.image-left .title {
+  position: relative;
+  left: 60%;
+  top: 10%;
+  margin: 0;
+  color: white;
+  font-size: 20px;
+  font-weight: 700;
+  white-space: pre-line;
+  /* display: inline-block; */
+}
+
+.secondary-card.image-right .title {
+  position: relative;
+  font-size: 20px;
+  color: white;
+  font-weight: 700;
+  white-space: pre-line;
+  margin: 0;
+}
+
 .description {
   color: #FAFAFA;
   font-size: 16px;
@@ -118,17 +184,15 @@ img {
   line-height: 1.5;
 }
 
-
 .arrow-container {
   position: absolute;
   top: 0;
   bottom: 0;
   width: 50px;
-  background-color: white;
+  background-color: rgb(255, 255, 255);
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 3;
 }
 
 .arrow-container.left {
@@ -138,7 +202,6 @@ img {
   top: 50%;
   transform: translateY(-50%);
   left: -25px;
-  z-index: 999;
 }
 
 .arrow-container.right {

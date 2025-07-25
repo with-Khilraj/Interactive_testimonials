@@ -61,7 +61,7 @@ const TestimoniaFirstSection = () => {
       {/* Center Text */}
       <div className="center-text">
         <h2 className="title">Hear How They Level Up Their Game!</h2>
-        <h1 className="main-title">Skill Masters Unite! 🤝</h1>
+        <h1 className="main-title">Skill <span>masters</span> Unite! 🤝</h1>
         <button className="view-button">View all Testimonials</button>
       </div>
 

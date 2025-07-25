@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import '../style/AnimatedCard.css';
 
+import wow1 from '../assets/wow1.png';
+import wow2 from '../assets/wow2.png';
+
 const AnimatedCard = ({ primary, secondaryCards = [], imagePosition = 'left' }) => {
   const [hovered, setHovered] = useState(false);
   const [index, setIndex] = useState(0);
@@ -39,12 +42,12 @@ const AnimatedCard = ({ primary, secondaryCards = [], imagePosition = 'left' }) 
       {/* Secondary Card */}
       {currentSecondary && (
         <div className={`card secondary-card ${imagePosition === 'right' ? 'image-right' : 'image-left'}`}>
-          <img src={currentSecondary.image} alt="secondary" />
-          <h2>{currentSecondary.title}</h2>
-          <p className="subtitle">{currentSecondary.subtitle}</p>
-          <p className="description">{currentSecondary.description}</p>
+          <p className='title'>{currentSecondary.title}</p>
+          <img src={currentSecondary.image1} alt='' className='wow1'/>
+          <img src={currentSecondary.image} alt="secondary" className={`secondary-img ${currentSecondary.className || ''}`} />
+          <img src={currentSecondary.image2} alt='' className='wow2'/>
 
-          {secondaryCards.length > 1 && (
+          {secondaryCards.length >= 1 && (
             <>
               <div className="arrow-container left">
                 <button

@@ -1,8 +1,8 @@
 import React,  { useEffect, useState } from "react";
 import '../style/GridAnimation.css';
 
-const GRID_ROWS =  30;
-const GRID_COLS =  10;
+const GRID_ROWS =  10;
+const GRID_COLS =  29;
 
 const GridAnimation = () => {
   const [activeBlocks, setActiveBlocks] = useState([]);
