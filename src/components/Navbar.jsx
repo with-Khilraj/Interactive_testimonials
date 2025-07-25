@@ -4,7 +4,7 @@ import '../style/Navbar.css';
 
 const Navbar = () => {
 
-  const navItems = ['testinomial', 'features', 'status', 'grid'];
+  const navItems = ['testinomial', 'features', 'course', 'grid'];
 
   return (
     <nav className="navbar">

@@ -17,7 +17,7 @@
   pointer-events: none;
 }
 
-.center-text span {
+.center-text .main-title span {
   color: #1DA077;
 }
 
@@ -40,6 +40,11 @@
 }
 
 .view-button {
+  font-size: 18px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   padding: 8px 16px;
   background: white;
   color: black;
@@ -47,6 +52,37 @@
   border-radius: 8px;
   cursor: pointer;
   pointer-events: auto;
+  position: relative;
+  overflow: hidden;
+  transition: background-color 0.3s ease;
+}
+
+.view-button:hover .arrow {
+  animation: arrowWiggle 1.6s ease-in-out infinite;
+}
+
+.arrow {
+  font-weight: bold;
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+@keyframes arrowWiggle {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(4px);
+  }
+  50% {
+    transform: translateX(8px);
+  }
+  75% {
+    transform: translateX(4px);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
 
 /* GIFs */
