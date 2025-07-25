@@ -16,7 +16,7 @@ const CourseStats = () => {
       {/* Cards container */}
       <div className="card-grid">
         {/* All Courses Card */}
-        <div className="card all-courses">
+        <div className="course-card all-courses">
           <div className="course-header">
             <span>View all Courses →</span>
           </div>
@@ -27,7 +27,10 @@ const CourseStats = () => {
             <img src='' alt="PS" />
           </div>
           <div className="course-number">
-            <h1>23<span>+</span></h1>
+            <div className="number-wrapper">
+              <h1>23</h1>
+              <span className="plus-icon">+</span>
+            </div>
             <h3>All Courses</h3>
             <p>courses you're powering through right now.</p>
           </div>
@@ -40,7 +43,10 @@ const CourseStats = () => {
             <p>exciting new courses waiting to boost your skills.</p>
           </div>
           <div className="vertical-number">
-            <h1>05<span>+</span></h1>
+            <div className="vertical-number-wrapper">
+              <h1>05</h1>
+              <span className="vertical-plus-icon">+</span>
+            </div>
           </div>
         </div>
 
@@ -51,7 +57,10 @@ const CourseStats = () => {
             <p>currently happening—don’t miss out on the action!</p>
           </div>
           <div className="vertical-number">
-            <h1>10<span>+</span></h1>
+            <div className="vertical-number-wrapper">
+              <h1>10</h1>
+              <span className="vertical-plus-icon">+</span>
+            </div>
           </div>
         </div>
       </div>
