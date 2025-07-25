@@ -1,11 +1,45 @@
-import React from "react";
+import React, { useState } from "react";
 import "../style/CourseStatus.css";
 
 
+const cardData = [
+  {
+    title: "All Courses",
+    count: "25",
+    desc: "courses you're powering\nthrough right now.",
+    bgColor: "#d43c3c",
+    color: "white",
+    icons: [],
+  },
+  {
+    title: "Upcoming Courses",
+    count: "05",
+    desc: "exciting new courses waiting to boost your skills.",
+    bgColor: "#fdeef0",
+    color: "#b42828",
+    icons: [],
+  },
+  {
+    title: "Ongoing Courses",
+    count: "10",
+    desc: "currently happening—don’t miss out on the action!",
+    bgColor: "#fdeef0",
+    color: "#b42828",
+    icons: [],
+  },
+];
+
 const CourseStats = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  const handleCardClick = (index) => {
+    if (index !== activeIndex) {
+      setActiveIndex(index);
+    }
+  };
+
   return (
     <div className="course-section">
-      {/* Heading */}
       <div className="course-heading">
         <p>Explore our classes and master trending skills!</p>
         <h2>
@@ -13,56 +47,54 @@ const CourseStats = () => {
         </h2>
       </div>
 
-      {/* Cards container */}
       <div className="card-grid">
-        {/* All Courses Card */}
-        <div className="course-card all-courses">
-          <div className="course-header">
-            <span>View all Courses →</span>
-          </div>
-          <div className="course-icons">
-            <img src='' alt="React" />
-            <img src='' alt="Figma" />
-            <img src='' alt="Vue" />
-            <img src='' alt="PS" />
-          </div>
-          <div className="course-number">
-            <div className="number-wrapper">
-              <h1>23</h1>
-              <span className="plus-icon">+</span>
+        {cardData.map((card, index) => {
+          const isActive = index === activeIndex;
+          return (
+            <div
+              key={index}
+              className={`course-card ${isActive ? "all-courses" : "small-card"}`}
+              style={{ backgroundColor: card.bgColor, color: card.color }}
+              onClick={() => handleCardClick(index)}
+            >
+              {isActive ? (
+                <>
+                  <div className="course-header">
+                    <span>View all Courses →</span>
+                  </div>
+                  {card.icons.length > 0 && (
+                    <div className="course-icons">
+                      {card.icons.map((icon, i) => (
+                        <img key={i} src={icon} alt="icon" />
+                      ))}
+                    </div>
+                  )}
+                  <div className="course-number">
+                    <div className="number-wrapper">
+                      <h1>{card.count}</h1>
+                      <span className="plus-icon">+</span>
+                    </div>
+                    <h3>{card.title}</h3>
+                    <p>{card.desc}</p>
+                  </div>
+                </>
+              ) : (
+                <>
+                  <div className="vertical-text">
+                    <h4>{card.title}</h4>
+                    <p>{card.desc}</p>
+                  </div>
+                  <div className="vertical-number">
+                    <div className="vertical-number-wrapper">
+                      <h1>{card.count}</h1>
+                      <span className="vertical-plus-icon">+</span>
+                    </div>
+                  </div>
+                </>
+              )}
             </div>
-            <h3>All Courses</h3>
-            <p>courses you're powering through right now.</p>
-          </div>
-        </div>
-
-        {/* Upcoming Courses Card */}
-        <div className="card small-card">
-          <div className="vertical-text">
-            <h4>Upcoming Courses</h4>
-            <p>exciting new courses waiting to boost your skills.</p>
-          </div>
-          <div className="vertical-number">
-            <div className="vertical-number-wrapper">
-              <h1>05</h1>
-              <span className="vertical-plus-icon">+</span>
-            </div>
-          </div>
-        </div>
-
-        {/* Ongoing Courses Card */}
-        <div className="card small-card">
-          <div className="vertical-text">
-            <h4>Ongoing Courses</h4>
-            <p>currently happening—don’t miss out on the action!</p>
-          </div>
-          <div className="vertical-number">
-            <div className="vertical-number-wrapper">
-              <h1>10</h1>
-              <span className="vertical-plus-icon">+</span>
-            </div>
-          </div>
-        </div>
+          );
+        })}
       </div>
     </div>
   );

@@ -1,142 +1,161 @@
 .course-section {
-  text-align: center;
-  padding: 40px 20px;
-  font-family: 'Poppins', sans-serif;
+  padding: 2rem;
+  font-family: sans-serif;
+  max-width: 1200px;
+  margin: auto;
 }
 
-.course-heading p {
-  font-size: 16px;
-  color: #444;
-  margin-bottom: 8px;
+.course-heading {
+  text-align: center;
+  margin-bottom: 2rem;
 }
 
 .course-heading h2 {
-  font-size: 28px;
-  font-weight: 700;
+  font-size: 2rem;
+  font-weight: bold;
 }
 
-.course-heading h2 span {
-  color: #00b86b;
+.course-heading span {
+  color: #d43c3c;
 }
 
 .card-grid {
   display: flex;
-  gap: 20px;
-  justify-content: center;
-  align-items: stretch;
-  margin-top: 40px;
+  gap: 1rem;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
+/* Shared card styles */
 .course-card {
-  border-radius: 24px;
-  padding: 24px;
-  box-sizing: border-box;
+  border-radius: 20px;
+  transition: all 0.5s ease;
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Large card layout */
+.all-courses {
+  flex: 1 1 400px;
+  min-width: 200px;
+  max-width: 350px;
+  padding: 1.5rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
-.all-courses {
-  background-color: #d43c3c;
-  color: white;
-  width: 340px;
-  text-align: left;
-  position: relative;
+.all-courses,
+.course-card.small-card {
+  height: 280px;
 }
 
-.all-courses .course-header {
-  position: absolute;
-  top: 16px;
-  right: 16px;
+.course-header {
   font-size: 14px;
-  font-weight: 500;
+  opacity: 0.8;
 }
 
 .course-icons {
   display: flex;
-  justify-content: flex-start;
-  gap: 12px;
-  margin: 50px 0 20px 0;
+  gap: 0.5rem;
+  margin: 1rem 0;
 }
 
 .course-icons img {
-  width: 36px;
-  height: 36px;
+  width: 30px;
+  height: 30px;
   object-fit: contain;
 }
 
-.course-number h1 {
-  font-size: 64px;
-  margin: 0;
-  line-height: 1;
+/* Large card number */
+.course-number {
+  height: 115px;
 }
 
-.number-wrapper {
+.course-number h1 {
+  display: inline-block;
+  font-size: 120px;
+  margin: 0;
+}
+
+.course-number h3 {
+  display: inline-block;
+  font-size: 1.3rem;
+  position: relative;
+  top: -72px;
+  right: -45px;
+}
+
+.course-number p {
+  font-size: 0.9rem;
+  opacity: 0.9;
+  margin-top: 0.4rem;
+  text-align: end;
+  position: relative;
+  top: -85px;
+  right: 18px;
+  white-space: pre-line;
+}
+
+/* Small vertical card layout */
+.small-card {
+  flex: 0 0 180px;
+  height: 350px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.5s ease;
+}
+
+.vertical-text {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.vertical-number {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.vertical-number h1 {
+  font-size: 120px;
+  margin: 0;
+}
+
+/* Plus icon styling */
+.number-wrapper,
+.vertical-number-wrapper {
   position: relative;
   display: inline-block;
 }
 
 .plus-icon {
   position: absolute;
-  top: -16px;
-  right: -13px;
+  top: -23px;
+  right: -28px;
+  font-size: 64px;
   font-weight: bold;
 }
 
-.course-number span {
-  font-size: 32px;
-}
-
-.course-number h3 {
-  font-size: 20px;
-  margin: 8px 0 4px;
-}
-
-.course-number p {
-  font-size: 14px;
-  opacity: 0.9;
-}
-
-.small-card {
-  background-color: #fdeef0;
-  color: #b42828;
-  width: 160px;
-  justify-content: space-between;
-}
-
-.vertical-text {
-  writing-mode: vertical-rl;
-  transform: rotate(180deg);
-  text-align: right;
-  margin-bottom: 20px;
-}
-
-.vertical-text h4 {
-  font-size: 18px;
-  font-weight: 600;
-  margin-bottom: 8px;
-}
-
-.vertical-text p {
-  font-size: 12px;
-  font-weight: 400;
-}
-
-.vertical-number h1 {
-  font-size: 48px;
-  margin: 0;
-  text-align: center;
-}
-
-.vertical-number-wrapper {
-  position: relative;
-  display: inline-block;
-}
-
 .vertical-plus-icon {
-  font-size: 24px;
   position: absolute;
-  top: -10px;
-  right: -10px;
+  font-size: 64px;
+  top: -17px;
+  right: -18px;
+}
+
+
+/* Smooth animation for layout transition */
+.card {
+  transition: all 0.5s ease-in-out;
+}
+
+.card:hover {
+  transform: translateY(-4px);
 }
